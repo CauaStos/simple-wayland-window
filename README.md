@@ -12,7 +12,7 @@ This repo is primarily for **learning and reference**. It’s a near-direct copy
 
 - Connects to a Wayland compositor  
 - Sets up a surface and shell surface  
-- Displays, for now, a colored window  
+- Displays, for now, a 320x240 gradient
 
 ## Why This Exists
 
