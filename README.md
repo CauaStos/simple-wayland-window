@@ -1,4 +1,4 @@
-# Simple-Wayland-Window
+# simple-wayland-window
 
 A minimal Wayland client window in Rust, based on the [`simple_window.rs`](https://github.com/Smithay/wayland-rs/blob/master/wayland-client/examples/simple_window.rs) example from the [`wayland-client`](https://docs.rs/wayland-client) crate.
 
