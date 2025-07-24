@@ -62,6 +62,10 @@ impl AppState {
     }
 }
 
+//The registry provides a list of global objects (protocols/interfaces) exposed by the compositor.
+//Here, we handle each advertised global and bind to the ones we need (e.g., wl_compositor, wl_shm).
+//Binding gives us a client-side handle to interact with that global object.
+//Each interface's events are handled in their respective `Dispatch` impls.
 //We need to implement Dispatch<O, _> to each O wayland object that needs to have their events processed.
 impl Dispatch<wl_registry::WlRegistry, ()> for AppState {
     fn event(
@@ -78,11 +82,6 @@ impl Dispatch<wl_registry::WlRegistry, ()> for AppState {
             version,
         } = event
         {
-            //It is needed to bind the protocols to our registry. So we match the protocols we need
-            //and bind them, also requesting their functions.
-            //
-            //Each protocol event is treated in their own Dispatch impl.
-            //
             match &interface[..] {
                 "wl_compositor" => {
                     //wl_compositor: the compositor, responsible for creating the displayable
